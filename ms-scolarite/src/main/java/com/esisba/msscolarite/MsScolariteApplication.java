@@ -24,11 +24,13 @@ public class MsScolariteApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        etudiantRepository.save(new Etudiant(null,"souhil",null,"2CS",null,null,null));
-        etudiantRepository.save(new Etudiant(null,"Nasro",null,"2CS",null,null,null));
+        Etablissement e1 = etablissementRepository.save(new Etablissement(null,"esi-sba",null));
+        Etablissement e2 = etablissementRepository.save(new Etablissement(null,"esi",null));
 
-        etablissementRepository.save(new Etablissement(null,"esi-sba",null));
-        etablissementRepository.save(new Etablissement(null,"esi",null));
+        etudiantRepository.save(new Etudiant(null,"souhil",null,"2CS",null,null,1L,null));
+        etudiantRepository.save(new Etudiant(null,"Nasro",null,"2CS",null,null,2L,null));
+
+
 
     }
 }

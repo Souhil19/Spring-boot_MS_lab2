@@ -19,9 +19,14 @@ public class Etudiant {
     private Date dateN;
 
     private String promo;
+
+    @Temporal(TemporalType.DATE)
     private Date dateInscription;
     @ManyToOne
-    private Etablissement etabl;
+    private Etablissement etablissement;
     private Long idFormation;
+
+    @Transient
+    private Formation formation;
 
 }
